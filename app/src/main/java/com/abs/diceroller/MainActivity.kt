@@ -19,20 +19,26 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val image: ImageView = findViewById(R.id.dice_iv)
+        val image1: ImageView = findViewById(R.id.dice_iv1)
+        val image2: ImageView = findViewById(R.id.dice_iv2)
         val  btn: Button = findViewById(R.id.roll_btn)
 
         btn.setOnClickListener {
-            val randomNom = (1..6).random()
-            when(randomNom){
-                1 -> image.setImageResource(R.drawable.dice_1)
-                2 -> image.setImageResource(R.drawable.dice_2)
-                3 -> image.setImageResource(R.drawable.dice_3)
-                4 -> image.setImageResource(R.drawable.dice_4)
-                5 -> image.setImageResource(R.drawable.dice_5)
-                6 -> image.setImageResource(R.drawable.dice_6)
-            }
+            image1.setImageResource(rollDice())
+            image2.setImageResource(rollDice())
         }
     }
 
+    fun rollDice(): Int {
+        val randomNom = (1..6).random()
+        val pic= when(randomNom){
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_1
+        }
+        return pic
+    }
 }
