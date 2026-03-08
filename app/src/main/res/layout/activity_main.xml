@@ -31,6 +31,7 @@
         app:layout_constraintStart_toStartOf="@id/dice_iv1"
         app:layout_constraintEnd_toEndOf="@id/dice_iv2"
         android:backgroundTint="@color/MainColor"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Roll"
