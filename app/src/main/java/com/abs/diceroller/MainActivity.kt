@@ -40,21 +40,21 @@ class MainActivity : AppCompatActivity() {
             diceAnimation2.start()
             // 4. Use a Handler to delay showing the final result.
             Handler(Looper.getMainLooper()).postDelayed({
-                image1.setImageResource(rollDice())
-                image2.setImageResource(rollDice())
+                rollDice(image1)
+                rollDice(image2)
             }, 600)
         }
     }
 
-    fun rollDice(): Int {
+    fun rollDice(view: ImageView) {
         val randomNom = (1..6).random()
         return when(randomNom){
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
+            1 -> view.setImageResource(R.drawable.dice_1)
+            2 -> view.setImageResource(R.drawable.dice_2)
+            3 -> view.setImageResource(R.drawable.dice_3)
+            4 -> view.setImageResource(R.drawable.dice_4)
+            5 -> view.setImageResource(R.drawable.dice_5)
+            else -> view.setImageResource(R.drawable.dice_6)
         }
     }
 }
